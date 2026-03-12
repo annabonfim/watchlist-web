@@ -1,59 +1,147 @@
-# WatchlistWeb
+# 🎬 Watchlist Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
+Frontend da aplicação **Watchlist**, desenvolvido com **Angular**, com o objetivo de permitir que o usuário:
 
-## Development server
+- ➕ adicione filmes e séries à lista
+- 📋 visualize os itens cadastrados
+- ✅ marque um item como assistido
+- 🔄 alterne entre assistido e não assistido
 
-To start a local development server, run:
+Este projeto consome uma API backend desenvolvida em **Java + Spring Boot**.
+
+---
+
+## ✨ Funcionalidades
+
+- Cadastro de novos itens na watchlist
+- Listagem dos itens salvos
+- Alteração do status de assistido / não assistido
+- Integração com backend local via API REST
+- Interface simples e intuitiva
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- HttpClient
+
+---
+
+## 📦 Backend da aplicação
+
+Para que este frontend funcione corretamente, é necessário rodar o backend localmente.
+
+Repositório do backend:  
+[watchlist-api](https://github.com/annabonfim/watchlist-api)
+
+---
+
+## ▶️ Como rodar o projeto
+
+### 1. Clone o repositório do frontend
+
+```bash
+git clone https://github.com/annabonfim/watchlist-web.git
+cd watchlist-web
+```
+
+### 2. Instale as dependências
+
+```bash
+npm install
+```
+
+### 3. Suba o backend localmente
+
+Antes de rodar o frontend, clone e execute o backend:
+
+```bash
+git clone https://github.com/annabonfim/watchlist-api.git
+cd watchlist-api
+```
+
+Depois, rode a aplicação backend pela sua IDE.
+
+A API deve estar disponível em:
+
+```bash
+http://localhost:8080
+```
+
+### 4. Rode o frontend
+
+Volte para a pasta do frontend e execute:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+ou
 
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Depois acesse no navegador:
 
 ```bash
-ng generate --help
+http://localhost:4200
 ```
 
-## Building
+---
 
-To build the project run:
+## 🔌 Integração com o backend
+
+O frontend está configurado para consumir a API local no endpoint base:
 
 ```bash
-ng build
+http://localhost:8080/watchlists
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Principais operações utilizadas:
 
-## Running unit tests
+- `GET /watchlists`
+- `POST /watchlists`
+- `PATCH /watchlists/{id}`
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+---
+
+## 📁 Estrutura do projeto
 
 ```bash
-ng test
+src/
+ └── app/
+     ├── form/
+     ├── list/
+     ├── list-item/
+     ├── service/
+     ├── app.ts
+     ├── app.html
+     └── app.config.ts
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📌 Observações
 
-```bash
-ng e2e
-```
+- O backend precisa estar rodando localmente para que os dados apareçam no frontend.
+- Caso a API não esteja ativa, a aplicação não conseguirá carregar ou atualizar os itens da watchlist.
+- Verifique se a porta do backend está correta (`8080`), pois ela é usada nas chamadas da aplicação Angular.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🚀 Objetivo do projeto
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto foi desenvolvido com foco em praticar:
+
+- criação de componentes no Angular
+- comunicação entre componentes
+- integração frontend + backend
+- consumo de API REST
+- atualização dinâmica da interface
+
+---
