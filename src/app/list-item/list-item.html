@@ -1,0 +1,23 @@
+<div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin-bottom: 12px; background-color: #f9f9f9;">
+  <h3 style="margin: 0 0 8px 0; font-size: 20px;">{{ item.title }}</h3>
+
+  <p style="margin: 4px 0;">
+    <strong>Onde assistir:</strong> {{ item.whereToWatch }}
+  </p>
+
+  <p style="margin: 8px 0;">
+    <strong>Status:</strong>
+    <span [style.color]="item.watched ? 'green' : 'darkorange'">
+      {{ item.watched ? 'Watched' : 'Not watched' }}
+    </span>
+  </p>
+
+     <div style="display: flex; gap: 10px; margin-top: 12px;">
+    <button
+      (click)="onToggleWatched()"
+      style="padding: 10px 14px; border: none; border-radius: 8px; background-color: #2563eb; color: white; cursor: pointer;">
+      {{ item.watched ? 'Marcar como não assistido' : 'Marcar como assistido' }}
+    </button>
+  </div>
+  
+</div>

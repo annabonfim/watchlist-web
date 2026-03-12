@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" style="display: flex; flex-direction: column; gap: 14px;">
+  <div>
+    <label for="title" style="display: block; margin-bottom: 6px; font-weight: bold;">Título</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      [(ngModel)]="title"
+      required
+      style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;" />
+  </div>
+
+  <div>
+    <label for="whereToWatch" style="display: block; margin-bottom: 6px; font-weight: bold;">Onde assistir</label>
+    <input
+      type="text"
+      id="whereToWatch"
+      name="whereToWatch"
+      [(ngModel)]="whereToWatch"
+      required
+      style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;" />
+  </div>
+
+  <button
+    type="submit"
+    style="padding: 12px; border: none; border-radius: 8px; background-color: #16a34a; color: white; font-size: 16px; cursor: pointer;">
+    Adicionar à lista
+  </button>
+</form>

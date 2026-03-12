@@ -1,0 +1,14 @@
+<div style="max-width: 700px; margin: 24px auto;">
+  <h2 style="margin-bottom: 16px; text-align: center;">Minha Watchlist</h2>
+
+  @if (items.length > 0) {
+    @for (item of items; track item.id ?? item.title) {
+      <app-list-item
+        [item]="item"
+        (toggleWatched)="onToggleWatched($any($event))">
+      </app-list-item>
+    }
+  } @else {
+    <p style="text-align: center; color: gray;">Não ha itens na sua lista de assistidos ainda.</p>
+  }
+</div>
